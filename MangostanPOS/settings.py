@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'clients.apps.ClientsConfig',
+    'frontend.apps.FrontendConfig',
     'products.apps.ProductsConfig',
     'sales.apps.SalesConfig',
     'suppliers.apps.SuppliersConfig',
@@ -60,7 +61,8 @@ ROOT_URLCONF = 'MangostanPOS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [(os.path.join(BASE_DIR, 'templates')),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
