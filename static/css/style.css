@@ -46,12 +46,13 @@ Main Page Content
 
 -------------------------------- */
 .cd-main-content .content-wrapper {
-  padding: 45px 5% 3em;
+  padding: 45px 0 3em;
+
 }
 .cd-main-content .content-wrapper h1 {
-  text-align: center;
-  padding: 3em 0;
-  font-size: 2rem;
+  /*text-align: center;*/
+  padding: 1em 0;
+  /*font-size: 2rem;*/
 }
 .cd-main-content::before {
   /* never visible - used to check MQ in jQuery */
@@ -64,9 +65,9 @@ Main Page Content
     padding-top: 55px;
   }
   .cd-main-content .content-wrapper h1 {
-    padding: 4em 0;
-    font-size: 3.2rem;
-    font-weight: 300;
+    /*padding: 4em 0;*/
+    /*font-size: 3.2rem;*/
+    /*font-weight: 300;*/
   }
   .cd-main-content::before {
     content: 'tablet';
@@ -687,7 +688,7 @@ Sidebar
   .cd-top-nav .has-children > a {
     height: 100%;
     padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;
-    line-height: 55px;
+    line-height: 50px;
   }
   .cd-top-nav .has-children > a::after {
     display: block;
@@ -727,4 +728,17 @@ Sidebar
     opacity: 1;
     visibility: visible;
   }
+}
+
+div.breadcrumbs {
+    background: #3e454c;
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    color: #c4dce8;
+    text-align: left;
+
+}
+div.breadcrumbs a{
+  color: white;
 }
