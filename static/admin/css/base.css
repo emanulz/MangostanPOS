@@ -95,7 +95,7 @@ h5 {
 }
 
 ul li {
-    /*list-style-type: square;*/
+    list-style-type: square;
     padding: 1px 0;
 }
 
@@ -272,10 +272,6 @@ tfoot td {
     border-top: 1px solid #eee;
 }
 
-thead th.required {
-    color: #000;
-}
-
 tr.alt {
     background: #f6f6f6;
 }
@@ -362,7 +358,7 @@ table thead th.sorted .sortoptions a.sortremove {
 }
 
 table thead th.sorted .sortoptions a.sortremove:after {
-    /*content: '\\';*/
+    content: '\\';
     position: absolute;
     top: -6px;
     left: 3px;

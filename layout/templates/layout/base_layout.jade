@@ -1,0 +1,41 @@
+
+| {% load i18n static %}
+doctype html
+html(lang="es")
+
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        title Mangostan POS
+        link(href != "{% static 'layout/slidebars/dist/slidebars.min.css' %}" rel="stylesheet")
+        link(href != "{% static 'layout/manhattan/manhattan.css' %}" rel="stylesheet")
+        link(href != "{% static 'css/font-awesome-4.3.0/css/font-awesome.css' %}" rel="stylesheet")
+
+    body
+
+        nav(canvas class='')
+            div(mhtn='container')
+                div(mhtn='row')
+                    div(mhtn='col-xs-100')
+                        div.float-left: span.button.toggle: i.fa.fa-bars: span Menu
+
+        div(class='' canvas='container')
+
+        div(off-canvas="id-1 left reveal")
+            ul
+                li: a(href='#'): span Texto 1
+                li: a(href='#'): span Texto 2
+                li: a(href='#'): span Texto 3
+
+        script(src="{% static 'js/jquery-1.11.2.min.js' %}")
+        script(src="{% static 'layout/slidebars/dist/slidebars.min.js' %}")
+        script(src="{% static 'layout/js/index.js' %}")
+
+        script(type='text/javascript').
+            ( function ( $ ) {
+            // Initialize Slidebars
+            var controller = new slidebars();
+            controller.init();
+            } ) ( jQuery );
+
