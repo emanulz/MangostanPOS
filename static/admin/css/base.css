@@ -358,7 +358,7 @@ table thead th.sorted .sortoptions a.sortremove {
 }
 
 table thead th.sorted .sortoptions a.sortremove:after {
-    content: '\\';
+    /*content: '\\'*/
     position: absolute;
     top: -6px;
     left: 3px;
@@ -442,6 +442,9 @@ select[multiple] {
     border-radius: 4px;
     color: #fff;
     cursor: pointer;
+    float: left;
+
+
 }
 
 a.button {
@@ -459,10 +462,11 @@ a.button {
 }
 
 .button.default, input[type=submit].default, .submit-row input.default {
-    float: right;
+    float: left;
     border: none;
     font-weight: 400;
     background: #417690;
+
 }
 
 .button.default:active, input[type=submit].default:active,

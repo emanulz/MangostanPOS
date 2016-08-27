@@ -10,43 +10,41 @@
 
     <title>Punto de venta</title>
 
+{#    <link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}" />#}
+{#    <link rel="stylesheet" type="text/css" href="{% static "layout/css/normalize.css" %}" />#}
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}" />
-    <link rel="stylesheet" type="text/css" href="{% static "layout/css/normalize.css" %}" />
-    <link rel="stylesheet" type="text/css" href="{% static "layout/slidebars/dist/slidebars.min.css" %}" />
-    <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />
-    {% block extrastyle %}{% endblock %}
-    {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
-    {% block extrahead %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static "layout/slidebars/dist/slidebars.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome-4.3.0/css/font-awesome.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "layout/css/index.css" %}" />
+    {% block extrastyle %}{% endblock %}
 </head>
 <body>
 
-<nav canvas="">
+<nav canvas="" style="text-align: center">
     <div>
-        <div class="float-left" style="margin-left: 40px">
+        <div class="float-left" style="margin:0 0 0 40px">
             <span class="button js-toggle-main-menu"><i class="fa fa-bars"></i> <span class="text">Menu</span></span>
         </div>
 
-        <div class="float-right" style="margin-right:40px" >
+        <div class="float-right" style="margin:0 40px 0 0" >
             <span class="button js-toggle-help-menu "><i class="fa fa-life-ring"></i> <span class="text">Help Center</span></span>
         </div>
 
-        <a href="/slidebars/"><img id="logo" src="/slidebars/images/slidebars-logo.png" alt="Slidebars"></a>
+        <a href="/"><img id="logo" src="/media/pos.png" alt="POS"></a>
     </div>
+    {% block breadcrumbs %}
+        <div class="breadcrumbs col-xs-12" style="padding: 0 40px;">
+            <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+            {% if title %} &rsaquo; {{ title }}{% endif %}
+        </div>
+    {% endblock %}
 </nav>
 
 
-<div canvas="container">
+<div canvas="container" >
 
-    <div class="col-xs-12" style="padding: 0">
+    <div class="col-xs-12" style="padding: 0;" >
 
-            {% block breadcrumbs %}
-                <div class="breadcrumbs col-xs-12">
-                <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
-                {% if title %} &rsaquo; {{ title }}{% endif %}
-                </div>
-            {% endblock %}
 
             {% block messages %}
             {% if messages %}
@@ -56,7 +54,7 @@
             {% endif %}
             {% endblock messages %}
             <div id="page-content-wrapper col-xs-12">
-            <div id="content" class="{% block coltype %}colM{% endblock %}">
+            <div >
                 {% block pretitle %}{% endblock %}
                 {% block content_title %}{% if title %}<h3 class="page_title">{{ title }}</h3>{% endif %}{% endblock %}
                 {% block content %}
@@ -70,8 +68,8 @@
 	</div>
 </div>
 
-<div off-canvas="main-menu left overlay">
-	<img id="logo-menu" src="/slidebars/images/slidebars-logo-white.png" alt="Slidebars">
+<div off-canvas="main-menu left reveal">
+	<img id="logo-menu" src="/media/pos.png" alt="Slidebars">
 
 	<ul class="menu small">
 		<li><a href="/"><span class="fa fa-home"></span> Inicio</a></li>
@@ -87,6 +85,7 @@
 </div>
 
 <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'layout/slidebars/dist/slidebars.min.js' %}"></script>
 <script src="{% static 'layout/js/controller.js' %}"></script>
 
