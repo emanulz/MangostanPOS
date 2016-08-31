@@ -1,0 +1,73 @@
+//
+   Created by emanuelziga on 30/8/16.
+
+|{% extends "layout/base_layout.html" %}
+
+| {% load i18n static %}
+
+| {% block extrastyle %}
+|   <link rel="stylesheet" type="text/css" href="{% static "sales/css/index.css" %}" />
+| {% endblock %}
+
+|{% block breadcrumbs %}
+<div class="breadcrumbs col-xs-12" style="padding: 0 40px;">
+<a href="/">Inicio</a> &nbsp;  &rsaquo; &nbsp;   <a href="/sales/">Ventas</a> &rsaquo; &nbsp; <a href="#">Nueva Venta</a>
+</div>
+|{% endblock %}
+
+| {% block content %}
+
+.row
+    .col-xs-12.col-sm-8.col-md-8.col-lg-8(style="padding:0")
+
+        div.bg-white.left-item.form-group
+            span: b Producto:
+            div.inner-addon.right-addon
+                i.fa.fa-barcode(style="padding-right:30px")
+                button.btn.btn-success(style="height:48px; width:48px; "): span: i.fa.fa-search(style="padding-bottom:8px")
+                input(type="number" placeholder="Ingrese el Código del Producto").form-control
+
+        div.bg-white.left-item.product-table
+            table.table
+                thead: tr
+                    th Cód
+                    th Art
+                    th Can
+                    th P.Un
+                    th Des%
+                    th IV
+                    th Sub
+                    th
+                tbody.table-body
+                    |{% for i in "xxxxx" %}
+                    tr
+                        td 1001
+                        td Arroz Luisiana kilogramo 99%
+                        td 10
+                        td 1730.85
+                        td(style="padding:0;width:6%"): input(type="number" style="width:95%; height:100%; padding:0; border:0px;")
+                        td 13%
+                        td 17308.5
+                        td(style="text-aling:center"): span.fa.fa-trash
+                    |{% endfor %}
+
+
+    .col-xs-12.col-sm-4.col-md-4.col-lg-4.side-div(style="padding:0")
+        div.col-xs-12(style="padding:0")
+            div.bg-white.right-item(style="height:80px")
+                div
+                    .col-xs-3(style="padding:0")
+                        img.avatar(src='/media/profile.jpg')
+                    .col-xs-9(style="padding:0;margin:0")
+                        span Cliente de Contado
+                        br
+                        span Crédito
+                        br
+                        span Balance:
+        div.col-xs-12(style="padding:0")
+            div.bg-white.right-item: h1 Totales
+        div.col-xs-12(style="padding:0")
+            div.bg-white.right-item: h1 Pago
+
+
+| {% endblock %}

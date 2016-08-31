@@ -141,10 +141,10 @@ ul.unstyled {
 /* line 1, ../sass/_canvas.scss */
 [canvas=container] {
   margin-top: 110px;
-  /*height: -webkit-calc( 100% - 60px );*/
-  /*height: -moz-calc( 100% - 60px );*/
-  /*height: calc( 100% - 60px );*/
-   background-color: #222222;
+  height: -webkit-calc( 100% - 90px );
+  height: -moz-calc( 100% - 90px );
+  height: calc( 100% - 90px );
+  background-color: #cacaca;
   overflow-x: hidden;
   padding:0;
 }
@@ -455,7 +455,7 @@ ol.breadcrumb li:last-child {
 }
 /* line 23, ../sass/_buttons.scss */
 .button:hover {
-  background-color: rgba(0, 0, 0, 0.024);
+  background-color: rgba(0, 0, 0, 0.27);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 400px) {
@@ -591,16 +591,16 @@ ol.breadcrumb li:last-child {
 }
 
 div.breadcrumbs {
-    background: #cacaca;
+    background: #333333;
     padding: 0px 40px 10px 40px;
     border: none;
     font-size: 14px;
-    color: #333333;
+    color: #cacaca;
     text-align: left;
 }
 
 div.breadcrumbs a {
-    color: #333333;
+    color: #cacaca;
 }
 
 div.breadcrumbs a:focus, div.breadcrumbs a:hover {
