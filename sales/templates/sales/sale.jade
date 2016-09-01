@@ -17,7 +17,7 @@
 
 | {% block content %}
 
-.row
+.row(style="margin-top:5px")
     .col-xs-12.col-sm-8.col-md-8.col-lg-8(style="padding:0")
 
         div.bg-white.left-item.form-group
@@ -27,7 +27,7 @@
                 button.btn.btn-success(style="height:48px; width:48px; "): span: i.fa.fa-search(style="padding-bottom:8px")
                 input(type="number" placeholder="Ingrese el Código del Producto").form-control
 
-        div.bg-white.left-item.product-table
+        div.bg-white.left-item.product-table(style="margin-top:10px")
             table.table
                 thead: tr
                     th Cód
@@ -39,7 +39,7 @@
                     th Sub
                     th
                 tbody.table-body
-                    |{% for i in "xxxxx" %}
+                    |{% for i in "xxxxxxxxxxxxxxxx" %}
                     tr
                         td 1001
                         td Arroz Luisiana kilogramo 99%
@@ -54,20 +54,54 @@
 
     .col-xs-12.col-sm-4.col-md-4.col-lg-4.side-div(style="padding:0")
         div.col-xs-12(style="padding:0")
-            div.bg-white.right-item(style="height:80px")
+            div.bg-white.right-item(style="height:160px")
+                span: b Datos del Cliente:
+                br
+                br
                 div
-                    .col-xs-3(style="padding:0")
+                    .col-xs-2(style="padding:0")
                         img.avatar(src='/media/profile.jpg')
-                    .col-xs-9(style="padding:0;margin:0")
-                        span Cliente de Contado
+                    .col-xs-10(style="padding:0")
+                        span: b Nombre :&nbsp
+                        span Emanuel Zúñiga Infante
                         br
-                        span Crédito
-                        br
-                        span Balance:
-        div.col-xs-12(style="padding:0")
-            div.bg-white.right-item: h1 Totales
-        div.col-xs-12(style="padding:0")
-            div.bg-white.right-item: h1 Pago
+                        span: b Crédito &nbsp :&nbsp
+                        span: i
+                                span.has-credit-icon.fa.fa-check-square
+                                //span.fa.fa-times-circle
 
+                        br
+                        span: b Balance &nbsp:&nbsp
+                        span.credit-status.credit-negative ₡ 9,999,999.00
+
+        div.col-xs-12(style="padding:0")
+            div.bg-white.right-item
+                span: b Totales:
+                br
+                br
+                table.table.table-totals
+                    tbody
+                        tr: th Descuento %
+                            td(class='price', style="padding:0"): input(type="number" style="width:50%;height:100%; padding:0 0 0 10px; border:0px;")
+                        tr: th IV:
+                            td(class='price') ₡ 0.00
+                        tr: th Sub-Total:
+                            td(class='price'): b ₡ 0
+
+                span: b Total:
+                    br
+                div
+                    h1.sale-total: span ₡10,123,850.00
+
+
+        div.col-xs-12(style="padding:0;")
+            div.bg-white.right-item
+                span: b Pago:
+                    br
+                div.btns
+                    button.btn.btn-default(style="height:48px; width:49%; margin-top:10px ") Confirmar&nbsp&nbsp
+                        span: i.fa.fa-rotate-right(style="padding-bottom:8px")
+                    button.btn.btn-default(style="height:48px; width:49%; margin-top:10px ") Pagar&nbsp&nbsp
+                        span: i.fa.fa-credit-card(style="padding-bottom:8px")
 
 | {% endblock %}

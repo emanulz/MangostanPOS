@@ -92,7 +92,47 @@ th {
 }
 
 .table{
-    font-size: 50%;
+    font-size: 65%;
+}
+.table-totals{
+        font-size: 80%;
+    }
+.table-totals tr th{
+    width: 100px;
+
+}
+.credit-positive{
+    font-size: 15px;
+    font-weight: bolder;
+    color: #5cb85c;
+}
+
+.credit-negative{
+    font-size: 18px;
+    font-weight: bolder;
+    color: #993300;
+}
+
+.sale-total{
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 28px;
+}
+
+.fa-check-square{
+    color: #5cb85c;
+}
+
+.fa-times-circle{
+    color: #993300;
+}
+
+.btn-default:hover{
+    background-color: #666666;
+    color: white;
 }
 
 @media (min-width: 768px) {
@@ -106,11 +146,15 @@ th {
         margin-right: 25px;
     }
     .form-control{
-    width: 90%;
+        width: 90%;
     }
-    .table{
-    font-size: 80%;
-}
+    .table {
+        font-size: 80%;
+    }
+    .table-totals{
+        font-size: 100%;
+    }
+
 }
 
 @media (min-width: 1200px) {
@@ -120,6 +164,9 @@ th {
     }
     .table{
     font-size: 100%;
-}
+    }
+    .table-totals{
+        font-size: 100%;
+    }
 
 }
