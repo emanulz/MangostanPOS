@@ -6,6 +6,7 @@
 | {% load i18n static %}
 
 | {% block extrastyle %}
+|   <link rel="stylesheet" type="text/css" href="{% static "css/side-panel/style.css" %}" />
 |   <link rel="stylesheet" type="text/css" href="{% static "sales/css/index.css" %}" />
 | {% endblock %}
 
@@ -17,14 +18,14 @@
 
 | {% block content %}
 
-.row(style="margin-top:5px")
+.row(style="margin-top:5px").blur-div
     .col-xs-12.col-sm-8.col-md-8.col-lg-8(style="padding:0")
 
         div.bg-white.left-item.form-group
             span: b Producto:
             div.inner-addon.right-addon
                 i.fa.fa-barcode(style="padding-right:30px")
-                button.btn.btn-success(style="height:48px; width:48px; "): span: i.fa.fa-search(style="padding-bottom:8px")
+                button.btn.btn-success.product-search-btn(style="height:48px; width:48px; "): span: i.fa.fa-search(style="padding-bottom:8px")
                 input(type="number" placeholder="Ingrese el Código del Producto").form-control
 
         div.bg-white.left-item.product-table(style="margin-top:10px")
@@ -55,12 +56,13 @@
     .col-xs-12.col-sm-4.col-md-4.col-lg-4.side-div(style="padding:0")
         div.col-xs-12(style="padding:0")
             div.bg-white.right-item(style="height:160px")
-                span: b Datos del Cliente:
+                span: b Datos del Cliente:&nbsp&nbsp&nbsp
+                    span: i.fa.fa-edit.btn-client-search
                 br
                 br
                 div
                     .col-xs-2(style="padding:0")
-                        img.avatar(src='/media/profile.jpg')
+                        img.avatar.btn-client-search(src='/media/profile.jpg')
                     .col-xs-10(style="padding:0")
                         span: b Nombre :&nbsp
                         span Emanuel Zúñiga Infante
@@ -93,15 +95,22 @@
                 div
                     h1.sale-total: span ₡10,123,850.00
 
-
         div.col-xs-12(style="padding:0;")
             div.bg-white.right-item
                 span: b Pago:
                     br
                 div.btns
-                    button.btn.btn-default(style="height:48px; width:49%; margin-top:10px ") Confirmar&nbsp&nbsp
+                    button.btn.btn-default.btn-confirm(style="height:48px; width:49%; margin-top:10px ") Confirmar&nbsp&nbsp
                         span: i.fa.fa-rotate-right(style="padding-bottom:8px")
-                    button.btn.btn-default(style="height:48px; width:49%; margin-top:10px ") Pagar&nbsp&nbsp
+                    button.btn.btn-default.btn-pay(style="height:48px; width:49%; margin-top:10px ") Pagar&nbsp&nbsp
                         span: i.fa.fa-credit-card(style="padding-bottom:8px")
 
+
+include sales/side-search-product.jade
+include sales/side-search-client.jade
+include sales/side-pay.jade
+| {% endblock %}
+
+| {% block extrajs %}
+|   <script src="{% static 'js/sales/index.js' %}"></script>
 | {% endblock %}
