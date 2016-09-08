@@ -34,6 +34,7 @@ class Product (models.Model):
                                         verbose_name='Precio sin Impuestos ₡')
     product_usetaxes = models.BooleanField(default=False, verbose_name='Usa Impuestos?')
     product_taxes = models.DecimalField(default=0, max_digits=4, decimal_places=2, verbose_name='Impuestos %')
+    product_discount = models.DecimalField(default=0, max_digits=4, decimal_places=2, verbose_name='Descuento %')
     product_sellprice = models.DecimalField(default=0, max_digits=10, decimal_places=2,
                                             verbose_name='Precio de Venta ₡')
 
@@ -48,8 +49,8 @@ class Product (models.Model):
 
 class ProductDepartment(models.Model):
 
-    productdepartment_name = models.CharField(max_length=255, verbose_name='Nombre de la Familia', unique=True)
-    productdepartment_code = models.CharField(max_length=2, unique=True, verbose_name='Identificador de Familia')
+    product_department_name = models.CharField(max_length=255, verbose_name='Nombre de la Familia', unique=True)
+    product_department_code = models.CharField(max_length=2, unique=True, verbose_name='Identificador de Familia')
 
     def __unicode__(self):
         return '%s' % self.productdepartment_name
@@ -62,9 +63,9 @@ class ProductDepartment(models.Model):
 
 class ProductSubDepartment(models.Model):
 
-    productsubdepartment_department = models.ForeignKey('ProductDepartment', verbose_name='Familia')
-    productsubdepartment_name = models.CharField(max_length=255, verbose_name='Nombre de la Sub-Familia', unique=True)
-    productsubdepartment_code = models.CharField(max_length=2, verbose_name='Identificador de Sub-Familia')
+    product_subdepartment_department = models.ForeignKey('ProductDepartment', verbose_name='Familia')
+    product_subdepartment_name = models.CharField(max_length=255, verbose_name='Nombre de la Sub-Familia', unique=True)
+    product_subdepartment_code = models.CharField(max_length=2, verbose_name='Identificador de Sub-Familia')
 
     def __unicode__(self):
         return '%s' % self.productsubdepartment_name
