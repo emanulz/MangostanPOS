@@ -21,12 +21,12 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(ProductDepartment)
 class ProductDepartmentAdmin(admin.ModelAdmin):
-    list_display = ('productdepartment_code', 'productdepartment_name',)
-    search_fields = ('productdepartment_code', 'productdepartment_name',)
+    list_display = ('product_department_name', 'product_department_name',)
+    search_fields = ('product_department_code', 'product_department_name',)
 
 
 @admin.register(ProductSubDepartment)
 class ProductSubDepartmentAdmin(admin.ModelAdmin):
-    list_display = ('productsubdepartment_name', 'productsubdepartment_department', 'productsubdepartment_code', )
-    search_fields = ('productsubdepartment_code', 'productsubdepartment_name',
-                     'productsubdepartment_department__productdepartment_name',)
+    list_display = ('product_subdepartment_name', 'product_subdepartment_department', 'product_subdepartment_code', )
+    search_fields = ('product_subdepartment_code', 'product_subdepartment_name',
+                     'product_subdepartment_department',)

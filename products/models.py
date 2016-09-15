@@ -6,7 +6,7 @@ from django.db import models
 # Create your models here.
 
 
-class Product (models.Model):
+class Product(models.Model):
 
     Unit = 'uni'
     Bulk = 'bul'
@@ -17,11 +17,11 @@ class Product (models.Model):
                      (Kit, 'En Paquete(kit)'),
                      )
 
-    product_description = models.CharField(max_length=255, verbose_name='Descripción del producto', default=' ')
     product_code = models.PositiveIntegerField(verbose_name='Código', unique=True, default=0)
     product_barcode = models.PositiveIntegerField(verbose_name='Código de Barras', blank=True, default=0)
-    product_department = models.ForeignKey('ProductDepartment', null=True, verbose_name='Familia', default='')
-    product_subdepartment = models.ForeignKey('ProductSubDepartment', null=True, verbose_name='Sub-Familia', default='')
+    product_description = models.CharField(max_length=255, verbose_name='Descripción del producto', default=' ')
+    product_department = models.ForeignKey('ProductDepartment', on_delete=models.SET_NULL, null=True, verbose_name='Familia', default='')
+    product_subdepartment = models.ForeignKey('ProductSubDepartment', on_delete=models.SET_NULL, null=True, verbose_name='Sub-Familia', default='')
     product_useinventory = models.BooleanField(default=False, verbose_name='Sistema de Inventarios?')
     product_inventory = models.FloatField(default=0, verbose_name='Existencia en Inventario')
     product_minimum = models.FloatField(default=0, verbose_name='Mínimo en inventario')
@@ -63,7 +63,7 @@ class ProductDepartment(models.Model):
 
 class ProductSubDepartment(models.Model):
 
-    product_subdepartment_department = models.ForeignKey('ProductDepartment', verbose_name='Familia')
+    product_subdepartment_department = models.ForeignKey('ProductDepartment', on_delete=models.SET_NULL, null=True, verbose_name='Familia')
     product_subdepartment_name = models.CharField(max_length=255, verbose_name='Nombre de la Sub-Familia', unique=True)
     product_subdepartment_code = models.CharField(max_length=2, verbose_name='Identificador de Sub-Familia')
 
