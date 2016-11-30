@@ -22,7 +22,7 @@ from django.views.generic import TemplateView
 from rest_framework import routers
 # Clients
 from clients.restframework import ClientViewSet
-# Products
+# Produ
 from products.restframework import ProductViewSet, ProductDepartmentViewSet, ProductSubDepartmentViewSet
 # Sales
 from sales.restframework import SaleViewSet, SaleDetailViewSet, PayDetailViewSet, PayCreditCardTypeViewSet
@@ -49,7 +49,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^sales/sale/', TemplateView.as_view(template_name="sales/sale.jade")),
     url(r'^api/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls',namespace='rest_framework')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^', TemplateView.as_view(template_name="layout/landing.jade")),
 
 ]
